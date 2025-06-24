@@ -288,6 +288,7 @@
                     footer_text: "A project designed for nail art lovers and inspiration seekers.",
                     loading: "Drawing...",
                     saved: "Saved!",
+                     download: "Download Image" ,// <-- 新增这行
                 },
                 zh: {
                     nav_faq: "常见问题",
@@ -307,6 +308,7 @@
                     footer_text: "一个为美甲爱好者和灵感探索者设计的项目。",
                     loading: "抽取中...",
                     saved: "已保存！",
+                     download: "Download Image", // <-- 新增这行
                 }
             };
             
@@ -342,49 +344,69 @@
             drawButton.addEventListener('click', handleDraw);
             saveButton.addEventListener('click', handleSave);
 
+            // 用下面这个新函数，完全替换掉你原来的 handleDraw 函数
             function handleDraw() {
                 const count = document.querySelector('input[name="draw-count"]:checked').value;
                 const drawnIndexes = new Set();
                 
-                // Clear previous results and show loading state
+                // 清空之前的结果并显示加载状态
                 imageResults.innerHTML = `<p class="col-span-full text-gray-500">${translations[currentLang].loading}</p>`;
-                saveButton.classList.add('hidden');
+                saveButton.classList.add('hidden'); // 确保“保存”按钮始终隐藏
 
-                // Ensure unique random numbers
+                // 确保唯一的随机数
                 while (drawnIndexes.size < count) {
                     const randomIndex = Math.floor(Math.random() * TOTAL_IMAGES) + 1;
                     drawnIndexes.add(randomIndex);
                 }
                 
-                // Use a short delay to simulate network latency and show loading state
+                // 使用短暂延迟来模拟网络加载并显示“抽取中...”
                 setTimeout(() => {
-                    imageResults.innerHTML = ''; // Clear loading text
+                    imageResults.innerHTML = ''; // 清空加载文本
                     const gridColsClass = {
                         '1': 'lg:grid-cols-1',
                         '3': 'lg:grid-cols-3',
                         '5': 'lg:grid-cols-5'
                     };
-                    // Adjust grid columns for better layout on large screens
+                    // 调整网格以适应不同数量的图片
                     imageResults.className = `mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 ${gridColsClass[count]} gap-6 min-h-[100px]`;
 
                     drawnIndexes.forEach(index => {
-                        const imgContainer = document.createElement('div');
-                        imgContainer.className = 'aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray-200 drawn-image';
+                        const imageUrl = `${BASE_URL}${index}.jpg`;
+
+                        // 1. 创建一个容器，用于包裹图片和下载按钮
+                        // 添加 'relative' 和 'group' 类是关键
+                        const container = document.createElement('div');
+                        container.className = 'relative group aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray-200 drawn-image';
                         
+                        // 2. 创建图片元素 (与之前相同)
                         const img = document.createElement('img');
-                        img.src = `${BASE_URL}${index}.jpg`;
+                        img.src = imageUrl;
                         img.alt = `Chrome nail art style #${index}`;
                         img.className = 'w-full h-full object-cover object-center';
-                        img.loading = 'lazy'; // Lazy load images
+                        img.loading = 'lazy';
 
-                        imgContainer.appendChild(img);
-                        imageResults.appendChild(imgContainer);
+                        // 3. 创建下载链接/按钮
+                        const downloadLink = document.createElement('a');
+                        downloadLink.href = imageUrl;
+                        downloadLink.download = `nail_inspiration_${index}.jpg`; // 设置下载后的文件名
+                        // 使用这些类来定位和美化按钮，并让它在鼠标悬停时出现
+                        downloadLink.className = 'absolute bottom-2 right-2 bg-black bg-opacity-50 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 cursor-pointer';
+                        downloadLink.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>`;
+                        downloadLink.setAttribute('title', translations[currentLang].download); // 使用我们刚添加的翻译
+
+                        // 4. 将图片和下载按钮都添加到容器中
+                        container.appendChild(img);
+                        container.appendChild(downloadLink);
+
+                        // 5. 将完整的容器添加到结果区域
+                        imageResults.appendChild(container);
                     });
 
-                    saveButton.classList.remove('hidden');
-                    saveButton.textContent = translations[currentLang].save_button;
+                    // 我们不再需要显示“保存”按钮，所以最后一行 `saveButton.classList.remove('hidden');` 已被删除。
+
                 }, 500);
             }
+
 
             function handleSave() {
                 const imagesToSave = [];
