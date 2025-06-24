@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Chrome Nails: 450+ Ideas & Inspiration Drawer | Nail Art Lab</title>
+    <meta name="description" content="Discover your next manicure with our inspiration drawer. Randomly select from 450+ stunning chrome nails, Hailey Bieber styles, and more. Get shiny, trendy nail ideas instantly.">
+    <meta name="keywords" content="Chrome Nails, manicure, nail ideas, nail art, Hailey Bieber nails, shiny nails, nail inspiration, manicure trends">
+    
+    <!-- Favicon (建议替换为您自己的图标) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💅</text></svg>">
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Structured Data for Google Rich Snippets -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://www.chromenails.pro",
+      "@type": "WebPage",
+      "name": "Chrome Nails: 450+ Ideas & Inspiration Drawer",
+      "description": "Discover your next manicure with our inspiration drawer. Randomly select from 450+ stunning chrome nails, Hailey Bieber styles, and more.",
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "http://nails.laiot.cloud/25.jpg",
+        "width": "1200",
+        "height": "800"
+      },
+      "keywords": "Chrome Nails, manicure, nail ideas, nail art, Hailey Bieber nails, shiny nails, nail inspiration"
+    }
+    </script>
+
+    <style>
+        /* 使用Inter字体作为基础字体 */
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* 隐藏原生 radio input */
+        .custom-radio input {
+            display: none;
+        }
+
+        /* 自定义 radio 按钮样式 */
+        .custom-radio label {
+            transition: all 0.2s ease-in-out;
+        }
+        
+        /* 选中状态下的样式 */
+        .custom-radio input:checked + label {
+            background-color: #111827; /* dark gray */
+            color: #ffffff;
+            border-color: #111827;
+        }
+
+        /* 循环旋转动画 */
+        @keyframes scroll-left {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); } /* 滚动一半距离，因为内容复制了一份 */
+        }
+
+        @keyframes scroll-right {
+            from { transform: translateX(-50%); }
+            to { transform: translateX(0); }
+        }
+
+        .carousel-container {
+            overflow: hidden;
+            -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        }
+        
+        .carousel-track {
+            display: flex;
+            width: fit-content; /* 适应内容宽度 */
+        }
+        
+        .animate-scroll-left {
+            animation: scroll-left 15s linear infinite;
+        }
+
+        .animate-scroll-right {
+            animation: scroll-right 15s linear infinite;
+        }
+
+        .carousel-container:hover .animate-scroll-left,
+        .carousel-container:hover .animate-scroll-right {
+            animation-play-state: paused;
+        }
+        
+        /* 抽中图片的出现动画 */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .drawn-image {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+
+        /* FAQ <details> 标签的箭头动画 */
+        details summary::-webkit-details-marker {
+            display: none;
+        }
+
+        details summary {
+            list-style: none;
+        }
+
+        details summary::after {
+            content: '+';
+            font-size: 1.5rem;
+            transition: transform 0.2s ease-in-out;
+            transform: rotate(0deg);
+            float: right;
+        }
+
+        details[open] summary::after {
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 border-b border-gray-200">
+                <div class="flex items-center">
+                    <span class="font-bold text-xl text-gray-900">💅 Nail Art Lab</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="#faq" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors" data-i18n="nav_faq">FAQ</a>
+                    <button id="lang-switcher" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors p-2 rounded-md">
+                        <span id="lang-text"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+
+        <!-- 1. Inspiration Drawer Section -->
+        <section class="text-center">
+            <h1 class="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900" data-i18n="main_title">Chrome Nails: Your Inspiration Drawer</h1>
+            <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600" data-i18n="main_subtitle">Select how many styles you'd like to discover, and let serendipity guide you.</p>
+
+            <div class="mt-10 flex justify-center gap-2 sm:gap-4 custom-radio">
+                <div>
+                    <input type="radio" id="draw1" name="draw-count" value="1" checked>
+                    <label for="draw1" class="cursor-pointer px-6 py-3 border border-gray-300 rounded-md font-medium text-gray-700">1</label>
+                </div>
+                <div>
+                    <input type="radio" id="draw3" name="draw-count" value="3">
+                    <label for="draw3" class="cursor-pointer px-6 py-3 border border-gray-300 rounded-md font-medium text-gray-700">3</label>
+                </div>
+                <div>
+                    <input type="radio" id="draw5" name="draw-count" value="5">
+                    <label for="draw5" class="cursor-pointer px-6 py-3 border border-gray-300 rounded-md font-medium text-gray-700">5</label>
+                </div>
+            </div>
+
+            <button id="draw-button" class="mt-8 inline-flex items-center justify-center px-8 py-4 border border-transparent text-base font-medium rounded-md text-white bg-gray-900 hover:bg-gray-700 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900">
+                <span data-i18n="draw_button">Get Inspired</span>
+            </button>
+
+            <div id="image-results" class="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 min-h-[100px]">
+                <!-- Drawn images will be injected here -->
+            </div>
+            
+            <button id="save-button" class="mt-8 hidden inline-flex items-center justify-center px-6 py-3 border border-gray-300 text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-100 transition-colors">
+                <span data-i18n="save_button">Save Inspiration</span>
+            </button>
+        </section>
+
+        <!-- 2. Showcase Carousel -->
+        <section class="mt-24 sm:mt-32">
+            <div class="carousel-container my-4">
+                <div class="carousel-track animate-scroll-left">
+                    <!-- The image list is duplicated to create a seamless loop -->
+                    <div class="flex space-x-6 px-3">
+                        <img src="http://nails.laiot.cloud/101.jpg" alt="Chrome nail style" class="h-40 w-auto rounded-lg object-cover">
+                        <img src="http://nails.laiot.cloud/102.jpg" alt="Chrome nail style" class="h-40 w-auto rounded-lg object-cover">
+                        <img src="http://nails.laiot.cloud/103.jpg" alt="Chrome nail style" class="h-40 w-auto rounded-lg object-cover">
+                    </div>
+                     <div class="flex space-x-6 px-3">
+                        <img src="http://nails.laiot.cloud/101.jpg" alt="Chrome nail style" class="h-40 w-auto rounded-lg object-cover">
+                        <img src="http://nails.laiot.cloud/102.jpg" alt="Chrome nail style" class="h-40 w-auto rounded-lg object-cover">
+                        <img src="http://nails.laiot.cloud/103.jpg" alt="Chrome nail style" class="h-40 w-auto rounded-lg object-cover">
+                    </div>
+                </div>
+            </div>
+             <div class="carousel-container my-4">
+                <div class="carousel-track animate-scroll-right">
+                    <!-- The image list is duplicated to create a seamless loop -->
+                    <div class="flex space-x-6 px-3">
+                        <img src="http://nails.laiot.cloud/201.jpg" alt="Shiny nail art" class="h-40 w-auto rounded-lg object-cover">
+                        <img src="http://nails.laiot.cloud/202.jpg" alt="Shiny nail art" class="h-40 w-auto rounded-lg object-cover">
+                        <img src="http://nails.laiot.cloud/203.jpg" alt="Shiny nail art" class="h-40 w-auto rounded-lg object-cover">
+                    </div>
+                     <div class="flex space-x-6 px-3">
+                        <img src="http://nails.laiot.cloud/201.jpg" alt="Shiny nail art" class="h-40 w-auto rounded-lg object-cover">
+                        <img src="http://nails.laiot.cloud/202.jpg" alt="Shiny nail art" class="h-40 w-auto rounded-lg object-cover">
+                        <img src="http://nails.laiot.cloud/203.jpg" alt="Shiny nail art" class="h-40 w-auto rounded-lg object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. YouTube Video Section -->
+        <section class="mt-24 sm:mt-32">
+            <h2 class="text-3xl font-bold tracking-tight text-gray-900 text-center" data-i18n="video_title">How to Get Perfect Chrome Nails</h2>
+            <div class="mt-8 aspect-w-16 aspect-h-9 max-w-3xl mx-auto rounded-lg overflow-hidden shadow-xl">
+                <iframe src="https://www.youtube.com/embed/6N04TPbpDnM?si=xk5P2J7whCR0xmEv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <!-- 4. FAQ Section -->
+        <section id="faq" class="mt-24 sm:mt-32 max-w-3xl mx-auto">
+            <h2 class="text-3xl font-bold tracking-tight text-gray-900 text-center" data-i18n="faq_title">Frequently Asked Questions</h2>
+            <div class="mt-8 space-y-4">
+                <details class="bg-white p-6 rounded-lg shadow-sm">
+                    <summary class="font-medium text-lg cursor-pointer" data-i18n="faq_q1_q">What are chrome nails?</summary>
+                    <p class="mt-4 text-gray-600" data-i18n="faq_q1_a">Chrome nails are a type of manicure that uses a special powder to create a reflective, mirror-like finish. It's applied over a gel base and top coat to achieve its signature high-shine, metallic look.</p>
+                </details>
+                <details class="bg-white p-6 rounded-lg shadow-sm">
+                    <summary class="font-medium text-lg cursor-pointer" data-i18n="faq_q2_q">How long do chrome manicures last?</summary>
+                    <p class="mt-4 text-gray-600" data-i18n="faq_q2_a">With proper application and care, a chrome gel manicure can last for two to three weeks without chipping. The longevity is similar to a standard gel manicure.</p>
+                </details>
+                <details class="bg-white p-6 rounded-lg shadow-sm">
+                    <summary class="font-medium text-lg cursor-pointer" data-i18n="faq_q3_q">Can I do Hailey Bieber's glazed donut nails at home?</summary>
+                    <p class="mt-4 text-gray-600" data-i18n="faq_q3_a">Yes! The 'glazed donut' look is a variation of chrome nails, typically using a pearlescent white chrome powder over a sheer nude or pink base. Many at-home kits are available to achieve this trendy look.</p>
+                </details>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-24 bg-gray-100">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 text-center text-sm text-gray-500">
+            <p>&copy; 2025 Nail Art Lab. All Rights Reserved.</p>
+            <p class="mt-2" data-i18n="footer_text">A project designed for nail art lovers and inspiration seekers.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- Configuration ---
+            const TOTAL_IMAGES = 450;
+            const BASE_URL = 'http://nails.laiot.cloud/';
+
+            // --- i18n (Internationalization) ---
+            const translations = {
+                en: {
+                    nav_faq: "FAQ",
+                    lang_switcher: "中文",
+                    main_title: "Chrome Nails: Your Inspiration Drawer",
+                    main_subtitle: "Select how many styles you'd like to discover, and let serendipity guide you.",
+                    draw_button: "Get Inspired",
+                    save_button: "Save Inspiration",
+                    video_title: "How to Get Perfect Chrome Nails",
+                    faq_title: "Frequently Asked Questions",
+                    faq_q1_q: "What are chrome nails?",
+                    faq_q1_a: "Chrome nails are a type of manicure that uses a special powder to create a reflective, mirror-like finish. It's applied over a gel base and top coat to achieve its signature high-shine, metallic look.",
+                    faq_q2_q: "How long do chrome manicures last?",
+                    faq_q2_a: "With proper application and care, a chrome gel manicure can last for two to three weeks without chipping. The longevity is similar to a standard gel manicure.",
+                    faq_q3_q: "Can I do Hailey Bieber's glazed donut nails at home?",
+                    faq_q3_a: "Yes! The 'glazed donut' look is a variation of chrome nails, typically using a pearlescent white chrome powder over a sheer nude or pink base. Many at-home kits are available to achieve this trendy look.",
+                    footer_text: "A project designed for nail art lovers and inspiration seekers.",
+                    loading: "Drawing...",
+                    saved: "Saved!",
+                },
+                zh: {
+                    nav_faq: "常见问题",
+                    lang_switcher: "English",
+                    main_title: "铬感美甲：你的灵感抽取器",
+                    main_subtitle: "选择您想发现的样式数量，让不期而遇的灵感引导您。",
+                    draw_button: "获取灵感",
+                    save_button: "保存灵感",
+                    video_title: "如何打造完美的铬感美甲",
+                    faq_title: "常见问题解答",
+                    faq_q1_q: "什么是铬感美甲？",
+                    faq_q1_a: "铬感美甲是一种使用特殊粉末创造出镜面反射效果的美甲。它通常涂在凝胶底层和顶层之上，以实现其标志性的高光泽金属外观。",
+                    faq_q2_q: "铬感美甲能持续多久？",
+                    faq_q2_a: "如果涂抹得当并加以护理，铬感凝胶美甲可以持续两到三周不掉色。其持久性与标准的凝胶美甲相似。",
+                    faq_q3_q: "我可以在家做海莉·比伯的'釉面甜甜圈'美甲吗？",
+                    faq_q3_a: "是的！“釉面甜甜圈”造型是铬感美甲的一种变体，通常在透明的裸色或粉色底色上使用珠光白色铬粉。市面上有许多家用套装可以实现这种潮流造型。",
+                    footer_text: "一个为美甲爱好者和灵感探索者设计的项目。",
+                    loading: "抽取中...",
+                    saved: "已保存！",
+                }
+            };
+            
+            let currentLang = localStorage.getItem('nail-art-lab-lang') || 'en';
+
+            const langSwitcher = document.getElementById('lang-switcher');
+            const langText = document.getElementById('lang-text');
+
+            function switchLanguage(lang) {
+                currentLang = lang;
+                localStorage.setItem('nail-art-lab-lang', lang);
+                document.documentElement.lang = lang;
+                
+                document.querySelectorAll('[data-i18n]').forEach(el => {
+                    const key = el.getAttribute('data-i18n');
+                    if (translations[lang] && translations[lang][key]) {
+                        el.textContent = translations[lang][key];
+                    }
+                });
+                langText.textContent = translations[lang].lang_switcher;
+            }
+
+            langSwitcher.addEventListener('click', () => {
+                const newLang = currentLang === 'en' ? 'zh' : 'en';
+                switchLanguage(newLang);
+            });
+
+            // --- Core Functionality ---
+            const drawButton = document.getElementById('draw-button');
+            const saveButton = document.getElementById('save-button');
+            const imageResults = document.getElementById('image-results');
+            
+            drawButton.addEventListener('click', handleDraw);
+            saveButton.addEventListener('click', handleSave);
+
+            function handleDraw() {
+                const count = document.querySelector('input[name="draw-count"]:checked').value;
+                const drawnIndexes = new Set();
+                
+                // Clear previous results and show loading state
+                imageResults.innerHTML = `<p class="col-span-full text-gray-500">${translations[currentLang].loading}</p>`;
+                saveButton.classList.add('hidden');
+
+                // Ensure unique random numbers
+                while (drawnIndexes.size < count) {
+                    const randomIndex = Math.floor(Math.random() * TOTAL_IMAGES) + 1;
+                    drawnIndexes.add(randomIndex);
+                }
+                
+                // Use a short delay to simulate network latency and show loading state
+                setTimeout(() => {
+                    imageResults.innerHTML = ''; // Clear loading text
+                    const gridColsClass = {
+                        '1': 'lg:grid-cols-1',
+                        '3': 'lg:grid-cols-3',
+                        '5': 'lg:grid-cols-5'
+                    };
+                    // Adjust grid columns for better layout on large screens
+                    imageResults.className = `mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 ${gridColsClass[count]} gap-6 min-h-[100px]`;
+
+                    drawnIndexes.forEach(index => {
+                        const imgContainer = document.createElement('div');
+                        imgContainer.className = 'aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray-200 drawn-image';
+                        
+                        const img = document.createElement('img');
+                        img.src = `${BASE_URL}${index}.jpg`;
+                        img.alt = `Chrome nail art style #${index}`;
+                        img.className = 'w-full h-full object-cover object-center';
+                        img.loading = 'lazy'; // Lazy load images
+
+                        imgContainer.appendChild(img);
+                        imageResults.appendChild(imgContainer);
+                    });
+
+                    saveButton.classList.remove('hidden');
+                    saveButton.textContent = translations[currentLang].save_button;
+                }, 500);
+            }
+
+            function handleSave() {
+                const imagesToSave = [];
+                imageResults.querySelectorAll('img').forEach(img => {
+                    imagesToSave.push(img.src);
+                });
+
+                if (imagesToSave.length > 0) {
+                    localStorage.setItem('saved-nail-inspirations', JSON.stringify(imagesToSave));
+                    saveButton.textContent = translations[currentLang].saved;
+                    // Optional: provide more feedback, like an alert
+                    // alert('Inspirations saved to your browser!');
+                }
+            }
+
+            // --- Initial Load ---
+            switchLanguage(currentLang);
+        });
+    </script>
+</body>
+</html>
+
